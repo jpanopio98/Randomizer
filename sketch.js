@@ -1,18 +1,33 @@
-let dogs = [];
+let pokemon = [{
+  name: "Pikachu",
+  type: "Electric"
+}, {
+  name: "Charizard",
+  type: "Fire"
+}, {
+  name: "Blastoise",
+  type: "Water"
+} {
+  name: "Venusaur",
+  type: "Grass"
+}];
 
-function setup(){
-	createCanvas(600,600);
-	background(200);
+
+let randomIndex;
+function setup() {
+  createCanvas(600, 600);
+  background(200);
 
 
 
 
 
-	dogs[0] = "poggers";
-	console.log(dogs);
+
+random = int(random(pokemon.length));
+text(pokemon[randomIndex].name,50,50 );
 
 }
 
-function draw(){
+function draw() {
 
 }
