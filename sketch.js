@@ -8,7 +8,7 @@ function setup(){
 
 
 
-	dogs[1] = "poggers";
+	dogs[0] = "poggers";
 	console.log(dogs);
 
 }
