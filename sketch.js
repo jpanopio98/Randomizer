@@ -13,13 +13,13 @@ let pokemon = [{
 }];
 
 let randomIndex;
-let counter = 0;
+let animating = false;
 
 function setup() {
   createCanvas(600, 600);
   background(200);
 	textSize(32);
-	text("click to randomize",50,50);
+	text("ZA WARUDO",50,50);
 	setTimeout(changeBackground, 1000);
 }
 
@@ -29,30 +29,34 @@ function changeBackground(){
 		console.log(counter)
 		background(random(255),random(255),random(255));
 		setTimeout(changeBackground, 1000);
-
-
-
 	}else {
-		
+
 	}
+}
+function randomizer(){
+  animating = false;
 
+  if (pokemon[0]) {
+    background(random(200,255));
+    randomIndex = int(random(pokemon.length));
+    text(pokemon[randomIndex].name,50,50 );
+    pokemon.splice(randomIndex, 1);
 
+}else {
+  background(200,255);
+  text("MUDA MUDA MUDA MUDA MUDA",50, 50);
+  }
 }
 
 function mousePressed(){
-	background(random(200,255));
-		if (pokemon[0]) {
+  animating = true;
+  setTimeout(randomizer, 2000);
 
-
-			randomIndex = int(random(pokemon.length));
-			text(pokemon[randomIndex].name,50,50 );
-			pokemon.splice(randomIndex, 1);
-
-	}else {
-		background(200,255);
-		text("A WILD POKEMON RAN AWAY",50, 50);
-	}
 }
 function draw() {
+  if (animating == true) {
 
+    ellipse(random(width), random(height), random(50,200));
+    color(HSB);
+  }
 }
