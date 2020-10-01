@@ -12,21 +12,33 @@ let pokemon = [{
   type: "Grass"
 }];
 
-
+let randomIndex;
+let counter = 0;
 
 function setup() {
   createCanvas(600, 600);
   background(200);
 	textSize(32);
 	text("click to randomize",50,50);
+	setTimeout(changeBackground, 1000);
+}
+
+function changeBackground(){
+	if (counter <= 5) {
+		counter++;
+		console.log(counter)
+		background(random(255),random(255),random(255));
+		setTimeout(changeBackground, 1000);
 
 
 
-
-
+	}else {
+		
+	}
 
 
 }
+
 function mousePressed(){
 	background(random(200,255));
 		if (pokemon[0]) {
