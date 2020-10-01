@@ -7,7 +7,7 @@ let pokemon = [{
 }, {
   name: "Blastoise",
   type: "Water"
-} {
+} ,{
   name: "Venusaur",
   type: "Grass"
 }];
@@ -23,7 +23,7 @@ function setup() {
 
 
 
-random = int(random(pokemon.length));
+randomIndex = int(random(pokemon.length));
 text(pokemon[randomIndex].name,50,50 );
 
 }
