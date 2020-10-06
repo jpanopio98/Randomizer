@@ -20,7 +20,7 @@ let button;
 
 function preload() {
   for (let i = 0; i <= 3; i++) {
-    pkmn[i] = loadImage("images/pkmn_" + i + ".JPG");
+    pkmn[i] = loadImage("images/pkmn_" + i + ".jpg");
   }
 }
 
