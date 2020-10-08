@@ -1,50 +1,69 @@
-let pokemon = [{
-  name: "Pikachu",
-  type: "Electric"
+let stand = [{
+  name: "Star Platinum",
+
 }, {
-  name: "Charizard",
-  type: "Fire"
+  name: "The World",
+
 }, {
-  name: "Blastoise",
-  type: "Water"
+  name: "Killer Queen",
+
 }, {
-  name: "Venusaur",
-  type: "Grass"
+  name: "Hanged Man",
+
 },{
-  name:"Torchic",
-  type:"Fire",
+  name:"Silver Chariot",
+
 },{
-  name:"Mudkip",
-  type:"Water",
+  name:"Hermit Purple",
+
 },{
-  name:"Treeko",
-  type:"Grass",
+  name:"The Fool",
+
+},{
+  name:"Emperor"
 }];
 
 let randomIndex;
 let animating = false;
-let pkmn = [];
+let stands = [];
 let imageCount = 0;
 let button;
 
 
 function preload() {
-  for (let i = 0; i <= 6; i++) {
-    pkmn[i] = loadImage("images/pkmn_" + i + ".jpg");
+  for (let i = 0; i <= 8; i++) {
+    stand[i] = loadImage("images/stand_" + i + ".jpg");
   }
 }
 
 function setup() {
-  createCanvas(600, 600);
-  background(200);
-  textSize(52);
-  text("ZA WARUDO", 50, 50);
+  createCanvas(1200, 600);
+//  background(200);
+  textSize(42);
+  text("STAND RANDOMIZER", 50, 50);
+  text("A stand is an entity based on tarot cards", 150, 150);
+
   setTimeout(changeBackground, 1000);
   imageMode(CENTER);
   frameRate(9);
   button =  createButton("click to randomize");
   button.mousePressed(buttonPressed);
 }
+
+function draw() {
+  if (animating == true) {
+    clear();
+    image(stand[imageCount], width/2,height/2);
+
+    if (imageCount < stand.length - 1) {
+      imageCount++;
+      console.log(imageCount);
+    } else {
+      imageCount = 0;
+    }
+  }
+}
+
 
 function changeBackground() {
   if (counter <= 8) {
@@ -57,36 +76,25 @@ function changeBackground() {
   }
 }
 
-function draw() {
-  if (animating == true) {
-    clear();
-    image(pkmn[imageCount], width / 2, height / 2);
-
-    if (imageCount < pkmn.length - 1) {
-      imageCount++;
-    } else {
-      imageCount = 0;
-    }
-  }
-}
 
 
 function randomizer() {
   animating = false;
 
-  if (pokemon[0]) {
+  if (stand[0]) {
     //background(random(200,255));
-    clear();
-    randomIndex = int(random(pokemon.length));
-      image(random[pokemon], width / 2, height -550);
-    text(pokemon[randomIndex].name, width / 2, height-25);
+      //clear();
 
-    pokemon.splice(randomIndex, 1);
+     randomIndex = int(random(stand.length));
+     image(random[stands],50,50);
+
+
+      stand.splice(randomIndex, 1);
 
 
   } else {
   //  background(200, 255);
-    text("MUDA MUDA MUDA MUDA MUDA", 50, 50);
+    //text("MUDA MUDA MUDA MUDA MUDA", 50, 50);
   }
 }
 
